@@ -1,7 +1,7 @@
 import React from 'react';
 import ItemDescription from './ItemDescription';
 import ItemShipping from './ItemShipping';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, Redirect } from 'react-router-dom';
 
 import items from '../data';
 
@@ -32,6 +32,10 @@ function Item(props) {
                 path="/item-list/:id/shipping" 
                 render={(props) => <ItemShipping {...props} item={item} />}
             />
+            {/* <Route 
+                path="/item-list/:id/shipping" 
+                render={(props) => <Redirect to="/" />}
+            /> */}
         </div>
     );
 }
