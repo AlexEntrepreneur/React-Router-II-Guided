@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Redirect } from 'react-router-dom';
 import Home from './components/Home';
 import ItemsList from './components/ItemsList';
 import Item from './components/Item';
@@ -10,7 +10,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      items: []
+      items: [],
+      isLoggedIn: true
     };
   }
 
@@ -37,7 +38,15 @@ class App extends React.Component {
 
         <Route exact path="/" component={Home} />
         <Route exact path="/" render={() => <h1>Hello from render!</h1>} />
-        <Route exact path="/item-list" render={(props) => <ItemsList {...props} items={this.state.items} />} />
+        <Route 
+          exact 
+          path="/item-list" 
+          render={(props) => 
+            this.state.isLoggedIn 
+            ? <ItemsList {...props} items={this.state.items} />
+            : <Redirect to="/login" />
+          } 
+        />
         <Route path="/item-list/:id" render={(props) => <Item items={this.state.items} {...props} />} />
       </div>
     );
