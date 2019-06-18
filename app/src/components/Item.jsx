@@ -1,4 +1,7 @@
 import React from 'react';
+import ItemDescription from './ItemDescription';
+import ItemShipping from './ItemShipping';
+import { Route } from 'react-router-dom';
 
 import items from '../data';
 
@@ -16,10 +19,17 @@ function Item(props) {
                     <h4>${item.price}</h4>
                 </div>
             </div>
-            <div>{/* Add subnav here */}
-                <p className="item-description">{item.description}</p>
-            </div>
-            {/* Add subroutes here */}
+            <nav className="item-sub-nav">
+            </nav>
+            <Route
+                exact
+                path="/item-list/:id" 
+                render={(props) => <ItemDescription {...props} item={item} />}
+            />
+            <Route 
+                path="/item-list/:id/shipping" 
+                render={(props) => <ItemShipping {...props} item={item} />}
+            />
         </div>
     );
 }
