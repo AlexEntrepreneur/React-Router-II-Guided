@@ -36,7 +36,8 @@ class App extends React.Component {
         </nav>
 
         <Route exact path="/" component={Home} />
-        <Route exact path="/item-list" component={ItemsList} />
+        <Route exact path="/" render={() => <h1>Hello from render!</h1>} />
+        <Route exact path="/item-list" render={(props) => <ItemsList {...props} items={this.state.items} />} />
         <Route path="/item-list/:id" component={Item} />
       </div>
     );
