@@ -1,6 +1,10 @@
 import React from 'react';
 
-function Home() {
+function Home(props) {
+    const goToItemsPage = () => {
+        props.history.push('/item-list');
+    };
+
     return (
         <div className="home-wrapper">
             <img
@@ -10,6 +14,7 @@ function Home() {
             />
             <button 
                 className="md-button shop-button"
+                onClick={goToItemsPage}
             >
                 Shop now!
             </button>
