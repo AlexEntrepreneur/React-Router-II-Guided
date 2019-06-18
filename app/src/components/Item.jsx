@@ -1,7 +1,7 @@
 import React from 'react';
 import ItemDescription from './ItemDescription';
 import ItemShipping from './ItemShipping';
-import { Route } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 import items from '../data';
 
@@ -20,6 +20,8 @@ function Item(props) {
                 </div>
             </div>
             <nav className="item-sub-nav">
+                <NavLink exact to={`/item-list/${item.id}`}>Description</NavLink>
+                <NavLink to={`/item-list/${item.id}/shipping`}>Shipping</NavLink>
             </nav>
             <Route
                 exact
