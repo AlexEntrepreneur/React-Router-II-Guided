@@ -5,7 +5,7 @@ function Home() {
 		<div className="home-wrapper">
 			<img
 				className="home-image"
-				src="https://www.uncommongoods.com/images/category/fun-fullwidth.jpg"
+				src="https://source.unsplash.com/F6-U5fGAOik"
 				alt=""
 			/>
 			<button className="md-button shop-button">Shop now!</button>

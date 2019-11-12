@@ -13,7 +13,7 @@ function App() {
 				</Link>
 				<div className="nav-links">
 					<Link to="/">Home</Link>
-					<Link className="some-link" to="/item-list">
+					<Link className="some-link" to="/items-list">
 						Shop
 					</Link>
 				</div>

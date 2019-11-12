@@ -7,7 +7,7 @@ function ItemsList() {
 	return (
 		<div className="items-list-wrapper">
 			{items.map(item => (
-				<Link className="some-link" to={`/item-list/${item.id}`} key={item.id}>
+				<Link className="some-link" to={`/items-list/${item.id}`} key={item.id}>
 					<div className="item-card">
 						<img
 							className="item-list-image"
