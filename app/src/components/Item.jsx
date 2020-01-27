@@ -1,9 +1,11 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 import items from '../data';
 
-function Item(props) {
-	const item = items.find(item => item.id.toString() === props.match.params.id);
+function Item() {
+  const { itemId } = useParams();
+	const item = items.find(item => item.id.toString() === itemId);
 
 	return (
 		<div className="item-wrapper">

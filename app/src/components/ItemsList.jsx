@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import items from '../data';
+import data from '../data';
 
 function ItemsList() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    // An API request could go here to get the list of items
+    setItems(data);
+  });
+
 	return (
 		<div className="items-list-wrapper">
 			{items.map(item => (
