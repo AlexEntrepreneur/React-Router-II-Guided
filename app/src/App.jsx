@@ -18,9 +18,15 @@ function App() {
 					</Link>
 				</div>
 			</nav>
-			<Route exact path="/" component={Home} />
-			<Route exact path="/items-list" component={ItemsList} />
-			<Route path="/items-list/:id" component={Item} />
+			<Route exact path="/">
+        <Home />
+      </Route>
+			<Route exact path="/items-list">
+        <ItemsList />
+      </Route>
+			<Route path="/items-list/:itemId">
+        <Item />
+      </Route>
 		</div>
 	);
 }
