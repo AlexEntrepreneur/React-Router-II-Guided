@@ -119,6 +119,7 @@ nav {
   color: #a5a5a5;
   text-decoration: none;
   padding: 12px;
+  margin-right: 32px;
 }
 
 .item-sub-nav a.active {
@@ -126,8 +127,8 @@ nav {
   font-weight: bold;
 }
 
-.item-sub-nav a:first-of-type {
-  margin-right: 32px;
+.item-sub-nav a:last-of-type {
+  margin-right: 0;
 }
 
 .item-card a {
