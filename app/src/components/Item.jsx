@@ -1,7 +1,9 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Route, Link } from 'react-router-dom';
 
 import items from '../data';
+import ItemDescription from './ItemDescription';
+import ItemShipping from './ItemShipping';
 
 function Item() {
   const { itemId } = useParams();
@@ -19,10 +21,21 @@ function Item() {
 				</div>
 			</div>
 			<div>
-				{/* Add subnav here */}
-				<p className="item-description">{item.description}</p>
+        <nav className="item-sub-nav">
+          <Link to={`/items-list/${item.id}`}>
+            Description
+          </Link>
+          <Link to={`/items-list/${item.id}/shipping`}>
+            Shipping
+          </Link>
+        </nav>
 			</div>
-			{/* Add subroutes here */}
+			<Route exact path={`/items-list/${item.id}`}>
+        <ItemDescription description={item.description} />
+      </Route>
+			<Route path={`/items-list/${item.id}/shipping`}>
+        <ItemShipping shipping={item.shipping} />
+      </Route>
 		</div>
 	);
 }
