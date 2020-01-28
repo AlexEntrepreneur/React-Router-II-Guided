@@ -1,6 +1,16 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 function Home() {
+  const history = useHistory();
+  const goToItemsPage = () => {
+    history.push('/items-list');
+  }
+
+  setTimeout(() => {
+    goToItemsPage();
+  }, 2000);
+  
 	return (
 		<div className="home-wrapper">
 			<img
