@@ -8,8 +8,9 @@ import { Route, NavLink, useParams, Redirect } from "react-router-dom";
 function Item(props) {
   const { itemId } = useParams();
   const item = props.items.find(item => item.id.toString() === itemId);
-
+  
   return (
+    item ?
     <div className="item-wrapper">
       <div className="item-header">
         <div className="image-wrapper">
@@ -29,12 +30,12 @@ function Item(props) {
         </NavLink>
       </nav>
       <Route exact path="/items-list/:id">
-        <ItemDescription item={item} />
+        <ItemDescription description={item.description} />
       </Route>
       <Route path="/items-list/:id/shipping">
-        <ItemShipping item={item} />
+        <ItemShipping shipping={item.shipping} />
       </Route>
-    </div>
+    </div> : null
   );
 }
 
