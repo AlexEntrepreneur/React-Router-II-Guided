@@ -21,10 +21,10 @@ function Item(props) {
         </div>
       </div>
       <nav className="item-sub-nav">
-        <NavLink exact to={`/items-list/${item.id}`}>
+        <NavLink exact to={`/items-list/${item.id}`} replace>
           Description
         </NavLink>
-        <NavLink to={`/items-list/${item.id}/shipping`}>
+        <NavLink to={`/items-list/${item.id}/shipping`} replace>
           Shipping
         </NavLink>
       </nav>
