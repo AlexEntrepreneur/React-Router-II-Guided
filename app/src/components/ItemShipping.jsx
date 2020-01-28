@@ -3,7 +3,7 @@ import React from 'react';
 function ItemShipping(props) {
   return (
     <div>
-      <p className="item-description">{props.item.shipping}</p>
+      <p className="item-description">{props.shipping}</p>
     </div>
   );
 }
