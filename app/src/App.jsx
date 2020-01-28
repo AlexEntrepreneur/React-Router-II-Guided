@@ -7,7 +7,7 @@ import Item from "./components/Item";
 import data from "./data";
 
 function App() {
-  const [items, setItems] = useState();
+  const [items, setItems] = useState([]);
   const [isLoggedIn] = useState(true);
 
   useEffect(() => {
