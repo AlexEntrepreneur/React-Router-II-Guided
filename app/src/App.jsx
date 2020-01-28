@@ -1,25 +1,27 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, NavLink, useHistory } from "react-router-dom";
 import Home from "./components/Home";
 import ItemsList from "./components/ItemsList";
 import Item from "./components/Item";
-import { useHistory } from "react-router-dom";
+import TestingRender from "./components/TestingRender";
 
 function App() {
   const history = useHistory();
-  const goHome = () => { 
+  const goHome = () => {
     history.push("/");
-  }
-  
+  };
+
   return (
     <div className="App">
       <nav>
-        <h1 className="store-header" onClick={goHome}>Trinkets</h1>
+        <h1 className="store-header" onClick={goHome}>
+          Trinkets
+        </h1>
         <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link className="some-link" to="/items-list">
+          <NavLink to="/">Home</NavLink>
+          <NavLink className="some-link" to="/items-list">
             Shop
-          </Link>
+          </NavLink>
         </div>
       </nav>
       <Route exact path="/">
@@ -31,6 +33,11 @@ function App() {
       <Route path="/items-list/:itemId">
         <Item />
       </Route>
+      {/* The older syntax */}
+      <Route
+        path="/test"
+        render={props => <TestingRender {...props} customProps={"Hello!"} />}
+      />
     </div>
   );
 }
