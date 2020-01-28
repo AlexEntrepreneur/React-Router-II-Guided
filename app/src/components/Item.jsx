@@ -28,12 +28,18 @@ function Item(props) {
         <NavLink to={`/items-list/${item.id}/shipping`} replace>
           Shipping
         </NavLink>
+        <NavLink to={`/items-list/${item.id}/reviews`} replace>
+          Reviews
+        </NavLink>
       </nav>
       <Route exact path="/items-list/:id">
         <ItemDescription description={item.description} />
       </Route>
       <Route path="/items-list/:id/shipping">
         <ItemShipping shipping={item.shipping} />
+      </Route>
+      <Route path="/items-list/:id/reviews">
+        <p>Some reviews go here</p>
       </Route>
     </div> : null
   );
