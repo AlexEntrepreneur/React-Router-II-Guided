@@ -3,13 +3,15 @@ import { useHistory } from 'react-router-dom';
 
 function Home() {
   const history = useHistory();
+  console.log(history);
+  
   const goToItemsPage = () => {
     history.push('/items-list');
   }
 
-  setTimeout(() => {
-    goToItemsPage();
-  }, 2000);
+  const goToGoogle = () => {
+    // history.createHref('https://google.com');
+  }
   
 	return (
 		<div className="home-wrapper">
@@ -18,7 +20,7 @@ function Home() {
 				src="https://source.unsplash.com/F6-U5fGAOik"
 				alt=""
 			/>
-			<button className="md-button shop-button">Shop now!</button>
+			<button className="md-button shop-button" onClick={goToItemsPage}>Shop now!</button>
 		</div>
 	);
 }
